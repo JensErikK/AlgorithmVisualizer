@@ -1,0 +1,12 @@
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\bin\Debug\net6.0\AlgorithmVisualizer.Shared.deps.json
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\bin\Debug\net6.0\AlgorithmVisualizer.Shared.dll
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\bin\Debug\net6.0\AlgorithmVisualizer.Shared.pdb
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\AlgorithmVisualizer.Shared.csproj.AssemblyReference.cache
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\AlgorithmVisualizer.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\AlgorithmVisualizer.Shared.AssemblyInfoInputs.cache
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\AlgorithmVisualizer.Shared.AssemblyInfo.cs
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\AlgorithmVisualizer.Shared.csproj.CoreCompileInputs.cache
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\AlgorithmVisualizer.Shared.dll
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\refint\AlgorithmVisualizer.Shared.dll
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\AlgorithmVisualizer.Shared.pdb
+C:\Repos\AlgorithmVisualizer\AlgorithmVisualizer\Shared\obj\Debug\net6.0\ref\AlgorithmVisualizer.Shared.dll

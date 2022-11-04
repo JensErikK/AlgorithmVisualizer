@@ -1,19 +1,19 @@
 ﻿@page "/sorting"
 @using AlgorithmVisualizer.Client.Algorithms.Sorting
-@using System.Runtime.CompilerServices
 
 <PageTitle>Sorting Visualization</PageTitle>
 
-<h1>Sorting @AlgorithmTitle()</h1>
+<h1>@AlgorithmTitle</h1>
 <p>
     <button class="btn btn-primary" @onclick="Shuffle">Shuffle Array</button>
     <button class="btn btn-primary" @onclick="Sort">Sort Array</button>
-    <button class="btn btn-primary" @onclick="SetDefault">Clear Algorithm</button>
+    <button class="btn btn-primary" @onclick="SetDefault" hidden="@HideResetButton">Clear Algorithm</button>
 </p>
 <p>
     <button class="btn btn-primary" @onclick="SetInsertionSort">Insertion Sort</button>
     <button class="btn btn-primary" @onclick="SetMergeSort">Merge Sort</button>
     <button class="btn btn-primary" @onclick="SetQuickSort">Quick Sort</button>
+    <button class="btn btn-primary" @onclick="SetSelectionSort">Selection Sort</button>
 </p>
 
 
@@ -36,29 +36,22 @@
     public List<int> SortingArray = new ();
 
     private int _length = 100;
+    private decimal minHeight = 10;
+    private decimal maxHeight = 1000;
 
     CancellationTokenSource? _cts;
 
-    private void Shuffle()
-    {
-        CancelSort();
-        SetArray(_length);
-
-        var random = new Random();
-
-        for(var i= SortingArray.Count - 1; i > 1; i--)
-        {
-            var rnd = random.Next(i + 1);  
-
-            (SortingArray[rnd], SortingArray[i]) = (SortingArray[i], SortingArray[rnd]);
-        }
-    }
-
+    
 
     protected override void OnInitialized()
     {
-        SetArray(_length);
+        SetArray();
+        Shuffle();
     }
+
+    private string AlgorithmTitle => _sorter is DefaultSort ? "Sorting" : _sorter.GetType().Name;
+
+    private bool HideResetButton => _sorter is DefaultSort;
 
     private void SetDefault()
     {
@@ -67,7 +60,7 @@
 
     private void SetInsertionSort()
     {
-        _sorter = new InsertionSort(this, 2);
+        _sorter = new InsertionSort(this, 1);
     }
 
     private void SetQuickSort()
@@ -78,6 +71,11 @@
     private void SetMergeSort()
     {
         _sorter = new MergeSort(this, 3);
+    }
+
+    private void SetSelectionSort()
+    {
+        _sorter = new SelectionSort(this, 10);
     }
 
     private async void Sort()
@@ -91,11 +89,26 @@
             {
                 await _sorter.Sort(_cts.Token);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 _cts.Dispose();
             }
 
+        }
+    }
+
+    private void Shuffle()
+    {
+        CancelSort();
+        SetArray();
+
+        var random = new Random();
+
+        for (var i = SortingArray.Count - 1; i > 1; i--)
+        {
+            var rnd = random.Next(i + 1);
+
+            (SortingArray[rnd], SortingArray[i]) = (SortingArray[i], SortingArray[rnd]);
         }
     }
 
@@ -104,10 +117,10 @@
         _cts?.Cancel();
     }
 
-    private void SetArray(int length)
+    private void SetArray()
     {
         SortingArray = new List<int>();
-        for (var i = 0; i < length; i++)
+        for (var i = 0; i < _length; i++)
         {
             SortingArray = SortingArray.Append(i + 1).ToList();
         }
@@ -115,32 +128,8 @@
         RefreshUi();
     }
 
-    private int ScaleHeight(int height)
-    {
-        var min = 10;
-        var max = 1000.00;
-        return height * (int)(max - min)/SortingArray.Count + min;
+    private int ScaleHeight(int height) => (int)(height * (maxHeight - minHeight) / SortingArray.Count + minHeight);
 
-    }
-
-    private string AlgorithmTitle()
-    {
-        var alg = _sorter switch 
-        {
-            InsertionSort => "Insertion Sort",
-            MergeSort => "Merge Sort",
-            QuickSort => "QuickSort",
-            _ => ""
-
-            };
-        return alg == ""? alg: "with " + alg;
-    }
-       
-    
-
-    public void RefreshUi()
-    {
-        StateHasChanged();
-    }
+    public void RefreshUi() => StateHasChanged();
 
 }

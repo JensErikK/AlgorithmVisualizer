@@ -197,14 +197,14 @@
       "netstandard.dll": "sha256-lZ8L5iiSghlvyt2ie2YdBYAtJbVa4mvpvBX3W9ihjLc=",
       "System.Private.CoreLib.dll": "sha256-jECkJy2Sjpl59QEL3nO3p8nwKGXvnJpXaKQF\/+MTw04=",
       "AlgorithmVisualizer.Shared.dll": "sha256-r2Q22izBcv1e3cA0+y0ccpwrIE2QpxmKd4rMeKef8D8=",
-      "AlgorithmVisualizer.Client.dll": "sha256-gxOU5LVOEdDSWLab4GOSYgpZ+zhMPSRDht0f5pmLpfo="
+      "AlgorithmVisualizer.Client.dll": "sha256-YuTOYOjpiG\/k9BGoLloEoa\/LBWXK8LA5gtzypjZ30Xs="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "AlgorithmVisualizer.Shared.pdb": "sha256-mRpvXMGPag9yjz08N7A2o88ycUk6WOPrFErsETdhyIs=",
-      "AlgorithmVisualizer.Client.pdb": "sha256-DuMabXv5kdnZrwkjyg7Ru+zBI6E\/f2I2oU2af3U\/KZ4="
+      "AlgorithmVisualizer.Client.pdb": "sha256-ThUVFeAoblrgwmapVS71jPAMEVe04k8lZiMu\/yMPpfw="
     },
     "runtime": {
       "dotnet.6.0.10.ab6o20rtby.js": "sha256-KtM3Wrooexmrt5NmqvZfWoDPtNIe6wZqLopR6ToqUPg=",

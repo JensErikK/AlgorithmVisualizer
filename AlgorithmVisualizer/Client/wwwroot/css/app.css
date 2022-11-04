@@ -34,6 +34,22 @@ a, .btn-link {
     color: red;
 }
 
+
+.array-container {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.array-bar {
+    width: 20px;
+    display: inline;
+    margin: 10px 1px;
+    background-color: #a81d57;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
